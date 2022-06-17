@@ -1,40 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from "react";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 function App() {
-    const [text, setText] = useState("");
-
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <p>
-                    <button
-                        onClick={async () => {
-                            const response = await fetch("/test-endpoint");
-                            const json = await response.json();
-                            setText(JSON.stringify(json));
-                        }}
-                    >
-                        Send request
-                    </button>
-                </p>
-                <p>
-                    {text}
-                </p>
-            </header>
+        <DemoHomepage />
+    );
+}
+
+function DemoHomepage() {
+    return (
+        <div className="vh-100 vw-100 d-flex align-items-center justify-content-center bg-light">
+            <Col
+                xs={10}
+                md={5}
+                style={{borderRadius: "40px"}}
+                className="p-5 text-center shadow-lg"
+            >
+                <div className="p-5 d-flex flex-column align-items-center gap-3">
+                    <h1 className="mb-3 fw-bold display-5">Welcome To Network App</h1>
+                    <Button size="lg" className="w-50">Log in</Button>
+                    <Button size="lg" className="w-50">Sign up</Button>
+                </div>
+            </Col>
         </div>
     );
 }
