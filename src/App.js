@@ -4,12 +4,16 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
+import {ViewContactPage} from "./pages/ViewContactPage";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<DemoHomepage />} />
+        <Route path="contacts" element={<Outlet />}>
+          <Route path=":contactId" element={<ViewContactPage />}></Route>
+        </Route>
       </Route>
     </Routes>
   );
