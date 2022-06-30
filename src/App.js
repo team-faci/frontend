@@ -1,16 +1,34 @@
 import './App.css';
+import {Link, Route, Routes} from 'react-router-dom';
+import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import Navbar from "react-bootstrap/Navbar";
 
 function App() {
   return (
-    <DemoHomepage/>
+    <div className="bg-light">
+      <DemoNavbar />
+      <Routes>
+        <Route path="/" element={<DemoHomepage />}/>
+      </Routes>
+    </div>
+  );
+}
+
+function DemoNavbar() {
+  return (
+    <Navbar bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Network App</Navbar.Brand>
+      </Container>
+    </Navbar>
   );
 }
 
 function DemoHomepage() {
   return (
-    <div className="vh-100 vw-100 d-flex align-items-center justify-content-center bg-light">
+    <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
       <Col
         xs={10}
         md={5}
