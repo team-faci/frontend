@@ -17,9 +17,11 @@ function App() {
 
 function Layout() {
   return (
-    <div className="bg-light">
+    <div className="vh-100 vw-100">
       <DemoNavbar />
-      <Outlet />
+      <Container className="py-5">
+        <Outlet />
+      </Container>
     </div>
   );
 }
@@ -36,7 +38,7 @@ function DemoNavbar() {
 
 function DemoHomepage() {
   return (
-    <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
+    <div className="d-flex align-items-center justify-content-center">
       <Col
         xs={10}
         md={5}
