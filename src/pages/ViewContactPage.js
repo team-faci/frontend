@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
 
+// Mock function to simulate an API call
 async function getContact(contactId) {
   const value = {
     "firstName": "Alice",
@@ -26,6 +27,7 @@ async function getContact(contactId) {
   });
 }
 
+// Mock function to simulate an API call
 async function getEvents(contactId) {
   const value = [
     {
