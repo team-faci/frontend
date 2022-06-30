@@ -1,5 +1,5 @@
 import './App.css';
-import {Link, Route, Routes} from 'react-router-dom';
+import {Link, Outlet, Route, Routes} from 'react-router-dom';
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -7,11 +7,19 @@ import Navbar from "react-bootstrap/Navbar";
 
 function App() {
   return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<DemoHomepage />} />
+      </Route>
+    </Routes>
+  );
+}
+
+function Layout() {
+  return (
     <div className="bg-light">
       <DemoNavbar />
-      <Routes>
-        <Route path="/" element={<DemoHomepage />}/>
-      </Routes>
+      <Outlet />
     </div>
   );
 }
