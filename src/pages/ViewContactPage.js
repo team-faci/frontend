@@ -95,7 +95,7 @@ export function ViewContactPage() {
       .catch(() => {
         // TODO: handle contact not found
       });
-  }, []);
+  }, [params.contactId]);
 
   useEffect(() => {
     getEvents(params.contactId)
@@ -105,7 +105,7 @@ export function ViewContactPage() {
       .catch(() => {
         // TODO: handle contact not found
       });
-  }, []);
+  }, [params.contactId]);
 
   return (
     <Row>
